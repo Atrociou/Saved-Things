@@ -1,0 +1,10 @@
+Number1 = input("12")
+Number2 = input("3")
+print("12 ", Number1)
+print("3 ", Number2)
+
+print("12 + 3=" + str(12 + 3))
+print("12 - 3=" + str(12 - 3))
+print("12 * 3=" + str(12 * 3))
+print("12 / 3=" + str(12 / 3))
+print() 
