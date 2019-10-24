@@ -1,5 +1,5 @@
 import time
-
+import os
 
 myWord = "hype"
 
@@ -11,26 +11,16 @@ if choice == myWord:
 else:
 	print("Not a match")
 
-letter = input("Type a letter: ")
-if letter in myWord:
+Letter = input("Type a letter: ")
+if Letter in myWord:
 	print("Letter is in the word")
 else:
 	print("Letter is not in the word")
-	
 	count = 0 
 	for l in myWord:
-		if l == letter:
+		if l == Letter:
 			print(count)
 	count += 1
-
-myWord = list(myWord)
-
-guessList = []
-for a in myWord:
-	guessList.append("_")
-guessList[0] = "h"
-print(guessList)
-
 
 hangmanList = ['''
     +===+
@@ -38,47 +28,29 @@ hangmanList = ['''
         |
         |
         |     
-       ===''','''
-    +===+
-    0   |
-        |
-        |
-        |
-       ===	''','''
-    +===+
-    0	|
-    |	|
-    	|
-    	|
        ===
-				''','''
-    +===+
-    0   |
-    |\  |
-        |
-        |     
-       ===''','''
-    +===+
-    0   |
-   /|\  |
-        |
-        |
-       ===	''','''
-    +===+
-    0   |
-   /|\  |
-     \  |
-        |
-       ===	''','''
-    +===+
-    0	|
-   /|\	|
-   / \	|
-    	|
-       ===
-				''']
-				
-				
+       			''']
+
+
+
+myWord = list("hype")
+guessList = list("____")
+
+index = 0
+
+for letter in myWord:
+	if letter == Letter:
+		guessList[index] = Letter
+	index += 1
+print(guessList)
+
+
+
+#guessList = []
+#for a in myWord:
+#	guessList.append("_")
+#guessList[0] = "h"
+#print(guessList)
 
 misses = 0
 
@@ -89,6 +61,14 @@ while misses < 7:
 		print("Letter is in the word")
 	else:
 		misses += 1
-
+		
 print("Game Over")
- 
+
+
+
+
+
+
+
+
+
